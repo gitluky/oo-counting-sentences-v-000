@@ -15,11 +15,7 @@ class String
   end
 
   def count_sentences
-    sentences_array = self.split("!").collect do |question|
-      question.split("?").collect do |period|
-        period.split(".")
-      end
-    end
-    sentences_array.flatten.count
+    self.split(/\.+|\?+|!+).count
   end
 end
+
